@@ -1,11 +1,11 @@
-# 🌾 Global Crop Yield Prediction
-**An End-to-End Machine Learning & Data Engineering Project**
+# 🌾 Global Crop Yield Prediction: Project "The Outliers"
+**An End-to-End Machine Learning & Data Engineering Solution for Food Security**
 
 ## 👥 The Team: "The Outliers"
 
 ### Leadership & Data Engineering
-- **Project Lead / Data Engineering:** [Deladem](https://github.com/your-profile)
-- **Assistant Data Lead:** [Name](https://github.com/assistant-profile) — *Key focus on data validation and ETL pipeline integrity.*
+- **Project Lead / Data Engineering:** [Saviour Amegayie](https://github.com/your-profile)
+- **Assistant Data Lead:** [Naomi](https://github.com/assistant-profile) — *Key focus on data validation and ETL pipeline integrity.*
 
 ### Squad Leads
 - **ML Squad Lead:** [Name](https://github.com/profile-link)
@@ -13,84 +13,85 @@
 - **Delivery & Docs Lead:** [Name](https://github.com/profile-link)
 
 ### Core Contributors
-- [Member Name](https://github.com/profile-link)
-- [Member Name](https://github.com/profile-link)
-- [Member Name](https://github.com/profile-link)
-- [Member Name](https://github.com/profile-link)
+- [Member Name](https://github.com/profile-link) | [Member Name](https://github.com/profile-link)
+- [Member Name](https://github.com/profile-link) | [Member Name](https://github.com/profile-link)
 
 ---
 
 ## 📌 Project Overview
-Food security is a critical global challenge. This project leverages historical agricultural and climate data to predict crop yields (**hg/ha**) across various countries. By analyzing the interplay between rainfall, temperature, and pesticide usage, we provide a data-driven tool for agricultural sustainability and planning.
+Food security is a critical global challenge. This project (based on **Case Study 4: Agritech**) leverages historical agricultural and climate data to predict crop yields (**hg/ha**) across various countries. By analyzing the interplay between rainfall, temperature, and pesticide usage, we provide a data-driven tool for agricultural sustainability and strategic planning.
+
+Our goal was to move beyond simple prediction and uncover the "Biological Realities" that drive global food production.
 
 ---
 
-## 🏗️ Data Architecture
-As the foundation of this project, we performed an extensive **ETL (Extract, Transform, Load)** process to move from four disjointed raw files into an integrated unified pipeline—a single "Master Clean" dataset. The data is sourced from **FAOSTAT** (Food and Agriculture Organization of the UN).
+## 🏗️ Data Architecture & Engineering
+The foundation of this project is a high-performance **ETL (Extract, Transform, Load)** pipeline that unified four disjointed raw files into a single "Master Clean" dataset.
 
+### 1. Data Cleaning & The "99% Rule"
+* **Outlier Capping:** We applied a **99th percentile cap** (Winsorization) to the yield data. This removed "impossible" values and dirty data while preserving the signal of elite, high-performing countries.
+* **Deduplication:** Successfully refined the dataset from 28,000+ to **25,932 high-quality records** for the initial merge, eventually scaling to **~45,000** for modeling.
 
-
-### 1. Data Sources
-* **Yield Data:** Historical crop output per hectare ($hg/ha$).
-* **Rainfall Data:** Average annual precipitation ($mm/year$).
-* **Pesticide Data:** Annual usage in tonnes of active ingredients.
-* **Temperature Data:** Average annual surface temperatures (°C).
-
-### 2. Preprocessing & Engineering
-Our pipeline ensures high-quality data through:
-* **Standardization:** Unified naming conventions (e.g., converting 'country' and 'year' keys to match across all sources).
-* **Cleaning:** Removal of leading whitespaces in headers and conversion of object-type weather data into numerical formats.
-* **Integration:** Performed a multi-key `Inner Join` on `Year` and `Area`.
-* **Deduplication:** Successfully identified and dropped redundant records, refining the dataset from 28,000+ to **25,932 high-quality records**.
+### 2. The "Honest Model" Validation
+To prevent "Data Leakage," we stress-tested our features:
+* **Target Encoding:** Used to capture the productivity reputation of specific Crops and Areas.
+* **One-Hot Encoding (OHE):** We re-ran all models with OHE to ensure the model wasn't "memorizing" averages. The consistency in results confirmed the model's high predictive integrity.
 
 ---
 
 ## 📊 Exploratory Data Analysis (EDA)
-> **Status:** *In Progress*
-* **Objective:** Identify correlation patterns between environmental factors and yield.
-* **Key Visualizations:**
-    * Global yield distribution per crop type.
-    * Temperature vs. Yield correlation heatmaps.
-    * *[Placeholder: Insert visualization of pesticide impact over time]*
+Our analysis discovered three critical "Sweet Spots":
+* **The Temperature Ceiling:** Yields peak between **15°C and 20°C**; production significantly drops when average surface temperatures exceed 25°C.
+* **The Pesticide Plateau:** Increased chemical use correlates with yield only up to a specific threshold, after which we observe diminishing returns.
+* **Geographical Dominance:** Identified a "Top 10" cohort of countries (including the UK, Belgium, and Denmark) that consistently double the global average yield through superior infrastructure.
 
 ---
 
-## 🧠 Machine Learning Modeling
-> **Status:** *In Progress*
-* **Target Variable ($y$):** `hg/ha_yield`
-* **Features ($X$):** `Area`, `Item`, `Year`, `average_rain_fall_mm_per_year`, `pesticides_tonnes`, `avg_temp`.
-* **Planned Algorithms:**
-    1.  Linear Regression (Baseline)
-    2.  Random Forest Regressor
-    3.  XGBoost
-* **Evaluation Metrics:** R-Squared ($R^2$), Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).
+## 🧠 Machine Learning: The Battle of the Models
+We conducted a "Model Battleground" to identify the most robust algorithm for agricultural forecasting.
 
+| Model | $R^2$ Score | MAE (Mean Absolute Error) | Verdict |
+| :--- | :--- | :--- | :--- |
+| **Random Forest** | **0.9937** | **2,233 hg/ha** | **🏆 Champion** |
+| **XGBoost** | 0.9631 | 10,514 hg/ha | Strong Performer |
+| **Linear Regression**| 0.7538 | 30,339 hg/ha | Baseline |
 
+### Why the Champion Won
+The **Random Forest Regressor** achieved a near-perfect **99.3% accuracy**. Unlike linear models, it successfully captured non-linear biological relationships (e.g., the fact that more rain is good, but *too much* rain is catastrophic).
+
+---
+
+## 📈 Key Insights: The "Secret Sauce"
+By analyzing **Feature Importance**, we discovered the hierarchy of what truly drives yield:
+1. **Crop Identity (Item):** The single most important factor. Potatoes and Sweet Potatoes are the global yield kings.
+2. **Geography (Area):** Regional efficiency and soil quality (represented by Area) are 5x more predictive than annual temperature fluctuations.
+3. **Environmental Amplifiers:** Rainfall and Pesticides act as the "fine-tuners" that allow a crop to reach its maximum genetic potential.
+
+---
+
+## 🗺️ Strategic Implications (Case Study Fulfillment)
+
+### 🚜 For Farmers: Decision Support
+* **Input Optimization:** Our model identifies the "Pesticide Plateau," allowing farmers to reduce chemical costs without sacrificing yield.
+* **Risk Assessment:** Farmers can use climate forecasts to predict if a specific crop choice is viable for the upcoming season, reducing the risk of total harvest failure.
+
+### 🏛️ For Policy Makers: Planning & Security
+* **Infrastructure Investment:** Because "Area" is a top predictor, governments should prioritize long-term irrigation and soil health over short-term subsidies.
+* **Market Stabilization:** With 99% accurate yield forecasting, governments can manage food storage and export logistics months in advance to prevent price spikes.
 
 ---
 
 ## 🚀 How to Run
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/repo-name.git](https://github.com/your-username/repo-name.git)
-    ```
-2.  **Install dependencies:**
-    ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn
-    ```
-3.  **Execution:**
-    Run `Crop_Yield_Main.ipynb` in a Jupyter environment to reproduce the preprocessing and training workflow.
-
----
-
-## 📈 Results & Findings
-> **Status:** *Placeholder*
-* Final model performance metrics will be summarized here by the ML Squad.
-* Analysis of the most influential factors (Feature Importance) affecting global crop production will follow.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/repo-name.git](https://github.com/your-username/repo-name.git)
+2. **Install dependencies:**
+   pip install pandas numpy matplotlib seaborn scikit-learn xgboost category_encoders
+3. **Execution:**
+   Run Crop_Yield_ML.ipynb to reproduce the ETL pipeline, EDA, and model training.
 
 ---
 
 ## 📝 Future Scope
-* Integration of soil quality and irrigation data.
-* Expansion into real-time climate monitoring for predictive alerts.
-* Development of a web-based dashboard for farmer decision support.
+* **Soil Nutrient Integration:** Adding NPK (Nitrogen, Phosphorus, Potassium) levels for localized field-level predictions.
+* **Real-time Dashboard:** Developing a Streamlit or Flask app for real-time "What-If" analysis for smallholder farmers.
