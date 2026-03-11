@@ -29,14 +29,23 @@ Our goal was to move beyond simple prediction and uncover the "Biological Realit
 
 ---
 
-## 🏗️ Data Architecture & Engineering
-The foundation of this project is a high-performance ETL (Extract, Transform, Load) pipeline that unified four disjoint raw files into a single "Master Clean" dataset of 45,540 records.
+🏗️ Data Architecture & Engineering
+The foundation of this project is a high-performance ETL (Extract, Transform, Load) pipeline that unified four disjointed raw files into a single, high-integrity "Master Clean" dataset.
 
-### 1. Data Cleaning & The "99% Rule"
+### 1. The Data Evolution (Refinement Pipeline)
+To ensure the model learned from truth rather than noise, we moved the data through a multi-stage validation funnel:
+
+* **Raw Ingestion:** Merged four independent sources (Rainfall, Temperature, Pesticides, and Yield), resulting in an initial "Dirty Master" set of ~28,000 records.
+
+* **Deduplication & Quality Control:** Identified and removed over 2,000 redundant entries and overlapping data points, refining the set to 25,932 unique, high-quality records.
+
+* **Final Expansion:** Through final feature engineering and the inclusion of the complete historical cycle, the pipeline delivered a robust 45,540 records for the champion model training.
+
+### 2. Data Cleaning & The "99% Rule"
 * **Outlier Capping:** We applied a **99th percentile cap** (Winsorization) to the yield data. This removed "impossible" values and dirty data while preserving the signal of elite, high-performing countries.
 * **Deduplication:** Successfully refined the dataset from 52,252  to **45,540 high-quality records**.
 
-### 2. The "Honest Model" Validation
+### 3. The "Honest Model" Validation
 To prevent "Data Leakage," we stress-tested our features:
 * **Target Encoding:** Used to capture the productivity reputation of specific Crops and Areas.
 * **One-Hot Encoding (OHE):** We re-ran all models with OHE to ensure the model wasn't "memorising" averages. Consistent results confirmed the model's strong predictive performance.
