@@ -71,7 +71,7 @@ We conducted a "Model Battleground" to identify the most robust algorithm for ag
 | **Linear Regression**| 0.7300 | 30,339 hg/ha | Baseline |
 
 ### Why Random Forest Won
-The **Random Forest Regressor** achieved a near-perfect **99.1% accuracy**. Unlike linear models, it successfully captured nonlinear biological relationships (e.g., that more rain is beneficial but too much rain is catastrophic).
+The **Random Forest Regressor** achieved a near-perfect **99% accuracy**. Unlike linear models, it successfully captured nonlinear biological relationships (e.g., that more rain is beneficial but too much rain is catastrophic).
 
 ---
 
