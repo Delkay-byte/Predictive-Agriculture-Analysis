@@ -1,0 +1,10 @@
+# Random Forest Champion Model (0.984 R2 Score)
+
+The serialized model was too large for GitHub (190MB+). 
+You can download the compressed ZIP file here:
+[https://drive.google.com/drive/folders/1NAWvDpMfxo8IKpHz2Gqh1RWEGnXwsswU?usp=sharing]
+
+Instructions:
+1. Download and extract 'random_forest_model.pkl'.
+2. Place it in this /models folder.
+3. Run main.py to see the results.
