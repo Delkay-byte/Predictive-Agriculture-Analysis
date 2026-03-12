@@ -15,11 +15,57 @@
   
 ---
 
-🏗️ Project Architecture
+## 🏗️ Project Architecture
 The following flowchart illustrates the technical journey from raw data ingestion to high-precision forecasting.
 
-![Flowchart illustrating the technical journey from raw data ingestion to high-precision forecasting](path/to/your/image.png)
-    
+![Flowchart](Reports/ETL_pipeline.png)
+
+---
+
+## 🌳 Project Structure
+```text
+.
+├── 📁 Data/      # Original disjointed CSV files and the high-integrity "Master Clean" dataset
+│   ├── 📄 ML_Master_Data.xls                   
+│   └── 📄 Viz_Master_Data.csv           
+|   └── 📄 master_clean_yield_data.csv
+|   └── 📄 pesticides.csv
+|   └── 📄 rainfall.csv
+|   └── 📄 temp.csv
+|   └── 📄 yield.csv
+├── 📁 Reports/                   # High-resolution visual evidence & Technical summary
+│   ├── 📊 1.feature_importance_chart.png
+│   ├── 📊 2.actual_vs_predicted_scatter.png
+│   ├── 📊 3.top 10 by averageyield.png
+│   ├── 📊 4.the_belgium_model.png
+│   └── 📊 5.farmer_optimization_zone.png
+│   └── 📊 6.Yield by decade.png
+│   └── 📊 7.yield trend over time.png
+│   └── 📊 8.Top5Crops_10Years.png
+│   └── 📊 9.temp_vs_yield_plot.png
+│   └── 📊 10.The_pesticide_plateau_plot.png
+│   └── 📊 11.area_yield_benchmark.png
+│   └── 📊 ETL_pipeline.png
+│   └── 📝 Technical_Summary_for_Predictive_Agriculture_Analysis.pdf
+├── 📁 models/
+│   └── 🤖 random_forest_model.pkl # Model file (See 'Model Download' section)
+├── 📁 Notebooks/
+│   └── 📄 Predictive_Agriculture_Analysis.ipynb
+├── 📁 src/                       # Production-ready source code
+│   ├── 📄 __init__.py
+│   └── 📄 preprocessing.py
+├── 📄 .gitignore
+├── 📄 LICENSE
+├── 📝 README.md
+├── 🐍 main.py
+└── 📄 requirements.txt
+```
+
+## 🤖 Model Download
+Due to GitHub's file size limits (100MB), the trained Random Forest model (**~190MB**) is hosted externally.
+**[Download random_forest_model.pkl here](https://drive.google.com/drive/folders/1NAWvDpMfxo8IKpHz2Gqh1RWEGnXwsswU?usp=sharing)**
+> **Installation Note:** Once downloaded, please move the `.pkl` file into the `/models` directory so that `main.py` can access it correctly.
+
 ---
 
 ## 📌 Project Overview
@@ -72,6 +118,8 @@ We conducted a "Model Battleground" to identify the most robust algorithm for ag
 
 ### Why Random Forest Won
 The **Random Forest Regressor** achieved a near-perfect **99% accuracy**. Unlike linear models, it successfully captured nonlinear biological relationships (e.g., that more rain is beneficial but too much rain is catastrophic).
+
+![Actual vs. Predicted model scatter plot chart](Reports/2.actual_vs_predicted_scatter.png)
 
 ---
 
