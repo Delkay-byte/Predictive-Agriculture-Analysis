@@ -146,11 +146,12 @@ By analysing **Feature Importance**, we discovered the hierarchy of what truly d
 ## 🚀 How to Run
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Delkay-byte/Predictive-Agriculture-Analysis.git](https://github.com/Delkay-byte/Predictive-Agriculture-Analysis.git)
+   git clone https://github.com/Delkay-byte/Predictive-Agriculture-Analysis.git
 2. **Install dependencies:**
-   !pip install pandas numpy matplotlib seaborn scikit-learn xgboost category_encoders
-3. **Execution:**
-   Run *Predictive_Agriculture_Analysis.ipynb* to reproduce the ETL pipeline, EDA, and model training.
+   pip install -r requirements.txt
+3. Execution:
+  * Open Notebooks/Predictive_Agriculture_Analysis.ipynb in Jupyter or VS Code to see the full analysis.
+  * Run python main.py to execute the prediction pipeline directly.
 
 ---
 
