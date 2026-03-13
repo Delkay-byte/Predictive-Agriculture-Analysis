@@ -12,7 +12,7 @@
 - [Umazayi Success Adinoyi](https://github.com/Success007T)
 - [Mariam Morohunfola](https://github.com/Mojisolar)
 - [Habiba Adamu Abdulkadir](https://github.com/bebo-bee)
-  
+- [Halilu Rahaman Alhassan]                (https://github.com/alidahamani12-org)
 ---
 
 ## 🏗️ Project Architecture
