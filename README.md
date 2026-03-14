@@ -1,5 +1,6 @@
 # 🌾 Global Crop Yield Prediction: Project "The Outliers"
 **An End-to-End Machine Learning & Data Engineering Solution for Food Security**
+
 [![Medium](https://img.shields.io/badge/Medium-Read%20the%20Story-black?logo=medium)](https://medium.com/p/5de58f05034d?postPublishedType=initial)
 [![Presentation](https://img.shields.io/badge/Slides-View%20Presentation-blue?logo=google-slides)](https://gamma.app/docs/Project-The-Outliers-The-Harvest-Intelligence-Engine-ouuxfqi2l9lyioa?mode=doc)
 
