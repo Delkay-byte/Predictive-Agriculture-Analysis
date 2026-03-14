@@ -1,11 +1,11 @@
 # 🌾 Global Crop Yield Prediction: Project "The Outliers"
 **An End-to-End Machine Learning & Data Engineering Solution for Food Security**
 # 🌾 The Harvest Intelligence Engine
-[![Medium](https://img.shields.io/badge/Medium-Read%20the%20Story-black?logo=medium)](YOUR_MEDIUM_LINK_HERE)
-[![Presentation](https://img.shields.io/badge/Slides-View%20Presentation-blue?logo=google-slides)](YOUR_GAMMA_LINK_HERE)
+[![Medium](https://img.shields.io/badge/Medium-Read%20the%20Story-black?logo=medium)](https://medium.com/p/5de58f05034d?postPublishedType=initial)
+[![Presentation](https://img.shields.io/badge/Slides-View%20Presentation-blue?logo=google-slides)](https://gamma.app/docs/Project-The-Outliers-The-Harvest-Intelligence-Engine-ouuxfqi2l9lyioa?mode=doc)
 
-
-> **"Can we predict global food security with 99% accuracy?"** > Read our full deep dive and the story behind 'The Outliers' on [Medium](https://medium.com/p/5de58f05034d?postPublishedType=initial).
+> **"Can we predict global food security with 99% accuracy?"**
+> Read our full deep dive and the story behind 'The Outliers' on [Medium](https://medium.com/p/5de58f05034d?postPublishedType=initial).
 
 ## 👥 The Team: "The Outliers"
 
