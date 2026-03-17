@@ -20,6 +20,8 @@
 - [Habiba Adamu Abdulkadir](https://github.com/bebo-bee)
 - [Halilu Rahaman Alhassan](https://github.com/alidahamani12-org)
 - [Oladunjoye Gold John](https://github.com/GOLDUST500)
+- [Celestine C. Nwele](https://github.com/or-debug)
+  
 ---
 
 ## 🏗️ Project Architecture
